@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COFFEE SHOP 33</title>
+<style>
+body {
+  margin: 0;
+  background: #100c0a;
+  color: #f5d58b;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+header { padding: 45px 15px; }
+h1 { color: #e8b84e; font-size: 32px; }
+button {
+  background: linear-gradient(135deg,#f8d77c,#a56a16);
+  color: #170f08;
+  border: 1px solid #ffe5a0;
+  border-radius: 15px;
+  padding: 16px 25px;
+  margin: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+section {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #c3943e;
+  border-radius: 18px;
+  background: #211710;
+}
+.hidden { display:none; }
+p { color: #fff0d5; }
+</style>
+</head>
+<body>
+<header>
+<h1>👑 COFFEE SHOP 33</h1>
+<h2>Bienvenue</h2>
+<p>Découvrez notre univers gourmand</p>
+<button onclick="showPage('chocolats')">🍫 Nos chocolats</button>
+<button onclick="showPage('qualiter')">🍬 Nos qualiter</button>
+</header>
+
+<section id="accueil">
+<h2>✨ Notre sélection</h2>
+<p>Découvrez notre foudre ⚡️.</p>
+</section>
+
+<section id="chocolats" class="hidden">
+<h2>🍫 Nos chocolats</h2>
+<p>Tablettes de chocolat</p>
+<p>qualiter et prix</p>
+<button onclick="showPage('accueil')">Retour</button>
+</section>
+
+<section id="confiseries" class="hidden">
+<h2>🍬 Nos confiseries</h2>
+<p>Bonbons et douceurs</p>
+<p>Découvrez notre sélection.</p>
+<button onclick="showPage('accueil')">Retour</button>
+</section>
+
+<section>
+<h2>📞 Contact</h2>
+<p>Retrouvez ici les coordonnées de votre boutique.</p>
+</section>
+
+<script>
+function showPage(id) {
+ document.querySelectorAll('section').forEach(s => {
+   s.classList.add('hidden');
+ });
+ if(id === 'accueil') {
+   document.getElementById('accueil').classList.remove('hidden');
+ } else {
+   document.getElementById(id).classList.remove('hidden');
+ }
+}
+</script>
+</body>
+</html>
